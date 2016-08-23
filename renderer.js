@@ -51,6 +51,11 @@
     }).render();
   }
 
+  function nextSprint () {
+    var removedSprint = sprints.shift();
+    sprints[0].start();
+  }
+
   function addNewSprint (params) {
     var sprintContainer = document.createElement('span');
     container.insertBefore(sprintContainer, container.firstChild);
@@ -58,11 +63,12 @@
     var sprint = new SprintModel(util.extend({ 
       el: sprintContainer, 
       template: __dirname + '/templates/SprintTemplate.ejs' ,
+      callback: nextSprint,
       debug: true
     }, params));
 
     sprint.render();
-    sprints.push(sprint);
+    sprints.unshift(sprint);
   }
 
 })();

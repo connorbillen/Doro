@@ -1,13 +1,13 @@
 var ejs = require('ejs');
 
 var SprintModel = function (params) {
-  
+
   this.log = function(message) {
     if (this.params.debug) {
       console.log(message);
     }
   }.bind(this);;
- 
+
   this.get = function (param) {
     return this.params[param];
   }.bind(this);
@@ -18,12 +18,23 @@ var SprintModel = function (params) {
 
   this.countdown = function () {
     if (this.params.seconds === 0 && this.params.minutes === 0) {
-      
+      clearInterval(this.interval);
+      if (typeof this.params.callback === 'function') {
+        this.params.callback()
+      }
     } else {
       this.params.minutes = (this.params.seconds === 0 ? this.params.minutes - 1 : this.params.minutes);
       this.params.seconds = (this.params.seconds === 0 ? 59 : this.params.seconds - 1); 
       this.render();
     }
+  }.bind(this);
+
+  this.start = function () {
+    this.interval = setInterval(this.countdown, 1000)
+  }.bind(this);
+
+  this.pause = function () {
+    clearInterval(this.interval); 
   }.bind(this);
 
   this.render = function () {
@@ -35,8 +46,6 @@ var SprintModel = function (params) {
 
       this.params.el.innerHTML = str;
     });
-
-    setTimeout(this.countdown, 1000);
   }.bind(this);
 
   this.init = (function () {
@@ -51,12 +60,15 @@ var SprintModel = function (params) {
     this.params = params;
     this.params.minutes = parseInt(this.params.SprintTime);
     this.params.seconds = 0;
+    this.interval = null;
   }).bind(this)();
 
   return {
     get: this.get,
     set: this.set,
-    render: this.render
+    render: this.render,
+    start: this.start,
+    pause: this.pause
   };
 
 };
