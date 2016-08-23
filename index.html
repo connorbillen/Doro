@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doro</title>
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body id="app">
+    <section class="hero is-fullheight">
+      <!-- header -->
+      <div class="hero-head">
+        <header class="nav">
+          <div class="container">
+          <div class="is-third nav-left">
+            <div class="nav-item">
+              <span id="addSprintButton" class="icon">
+              </span>
+            </div>
+          </div>
+
+          <div class="is-third nav-center">
+            <div class="nav-item">
+              <h4 class="title is-4">Doro</h4>
+            </div>
+          </div>
+
+          <div class="is-third nav-right">
+            <div class="nav-item" style="float: right; ">  
+              <span id="startSprintButton" class="icon">
+              </span>
+            </div>
+          </div>
+        </header>
+      </div>
+      </div>
+      <!-- end header -->
+
+      <!-- body -->
+      <div id="contentContainer" class="hero-body">
+        <div id="contentArea" style="height: 100%; " class="columns container has-text-centered">
+        </div>
+      </div>
+      <!-- end body -->
+
+      <!-- footer -->
+      <div class="hero-foot">
+        <div class="container">
+          <div class="content has-text-centered">
+            designed and developed by <a href="https://github.com/connorbillen"><strong>connor billen</strong></a>
+          </div>
+        </div>
+      </div>
+      <!-- end footer -->
+    </section>
+
+    <!-- modal container element -->
+    <div id="modalContainer">
+    </div>
+
+    <!-- main script requirement-->
+    <script type="text/javascript">
+      require('./renderer.js');
+    </script>
+    <!-- end user javascript files -->
+  </body>
+</html>

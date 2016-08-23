@@ -1,0 +1,62 @@
+html, body, div.content, a, h4.title, section.hero { 
+  background-color: #99AA99 !important;
+  color: #113311 !important;
+  overflow-y: hidden;
+}
+
+div#contentContainer {
+  height: 85vh;
+  width: 100vw;
+  overflow-y: hidden;
+  padding: 10px 20px 40px 20px;
+}
+
+div#contentContainer:hover {
+  overflow-y: auto;
+  padding: 10px 13px 40px 20px;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(50, 50, 50, 0.5) !important;
+  border-radius: 0.3rem;
+}
+
+div.nav-item {
+  height: 50px;
+}
+
+div.is-third {
+  min-width:33%;
+}
+
+div.hero-body {
+  padding-top: 10px;
+}
+
+header.nav {
+  padding: 0px 5px;
+}
+
+div.doro-sprint {
+  height: 80px;
+  background-color: #eeffee; 
+  border-radius: 0.2rem;
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.time-remaining {
+  font-size: 3rem;
+  width: 50%;
+}
+
+div.task {
+  width: 50%;
+}
