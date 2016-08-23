@@ -53,7 +53,10 @@
 
   function nextSprint () {
     var removedSprint = sprints.shift();
-    sprints[0].start();
+
+    if (sprints.length) {
+      sprints[0].start();
+    }
   }
 
   function addNewSprint (params) {
