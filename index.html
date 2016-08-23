@@ -50,7 +50,7 @@
       <div class="hero-foot">
         <div class="container">
           <div class="content has-text-centered">
-            designed and developed by <a href="https://github.com/connorbillen"><strong>connor billen</strong></a>
+            designed and developed by <a target="_black" onclick="shell.openExternal('https://github.com/connorbillen')"><strong>connor billen</strong></a>
           </div>
         </div>
       </div>
@@ -64,6 +64,7 @@
     <!-- main script requirement-->
     <script type="text/javascript">
       require('./renderer.js');
+      const {shell} = require('electron');
     </script>
     <!-- end user javascript files -->
   </body>
